@@ -1,7 +1,7 @@
 /**
  * CtrlSpace JavaScript Library v0.0.0
  *
- * Copyright Takaki Kinoshita and other contributors
+ * Copyright takakik and other contributors
  * Released under the MIT license
  *
  * Date: 2017-11-28
