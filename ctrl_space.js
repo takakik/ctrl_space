@@ -20,7 +20,7 @@
       if(65296 <= charCode && charCode <= 65305) {
         converted = _twoByte2OneByteNumber(target);
       }
-      else if([8208, 8213, 65293, 12540].includes(charCode)) { // => ['‐', '―', '－', 'ー']
+      else if([8208, 8213, 65293, 12540, 8722].includes(charCode)) { // => ['‐', '―', '－', 'ー', '−']
         converted = '-';
       }
 
@@ -29,6 +29,9 @@
   }
 
   $.fn.CtrlSpace = function () {
+    var
+      callback = arguments[0] || function (r) {};
+
     this.each(function () {
       $input = $(this);
 
@@ -46,6 +49,8 @@
           .join('');
 
         $this.val(result);
+
+        callback.call(this, result);
       });
     });
   }
